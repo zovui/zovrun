@@ -51,9 +51,9 @@
 import editor from '../components/codemirror'
 import codeRun from '../components/code-run/code-run'
 import { fullScreen, exitScreen } from '@/utils/window-tools'
-const prefix = 'groot-home'
 // 默认代码
-const defaultCode = `<template></template>`
+import defaultCode from './default-code'
+const prefix = 'groot-home'
 export default {
     name: prefix,
     components:{
@@ -111,7 +111,7 @@ export default {
         localStorage.getItem('zov-theme') === 'dark' ? this.$Dark.open() : this.$Dark.close()
         this.isDark = localStorage.getItem('zov-theme') === 'dark'
         window.name && (this.watchValue = this.codeCopy = window.name)
-        // this.codeChange()
+        this.codeChange()
     }
 }
 </script>
