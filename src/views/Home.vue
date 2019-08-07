@@ -80,15 +80,19 @@ export default {
             clearTimeout(this.timer)
             this.timer = null
         },
+        run () {
+            this.$refs.run.codeRun(this.$refs['run-container'])
+        },
         codeChange () {
             this.clearTimer()
             this.timer = setTimeout(() => {
-                this.$refs.run.codeRun(this.$refs['run-container'])
+                this.run()
                 this.clearTimer()
             }, 500)
         },
         reset () {
             this.$refs['editor'].editor.setValue(this.codeCopy)
+            this.run()
         }
     },
     watch: {
@@ -111,7 +115,7 @@ export default {
         localStorage.getItem('zov-theme') === 'dark' ? this.$Dark.open() : this.$Dark.close()
         this.isDark = localStorage.getItem('zov-theme') === 'dark'
         window.name && (this.watchValue = this.codeCopy = window.name)
-        this.codeChange()
+        this.run()
     }
 }
 </script>
