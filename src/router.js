@@ -1,4 +1,4 @@
-import Vue from 'vue'
+import Vue from 'vue:esm'
 import Router from 'vue-router'
 import Home from './views/Home.vue'
 

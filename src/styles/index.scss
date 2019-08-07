@@ -1,1 +1,64 @@
 @import "~zov/core/index";
+.zov-run{
+    $headerH: 64px;
+    &-header{
+        .zov-tooltip{
+            // 此处样式重置，已经提到zov问题了，版本更新后可以解决。
+            &-title{
+                line-height: initial;
+                text-align: left;
+            }
+            &-description{
+                line-height: initial;
+                text-align: left;
+            }
+        }
+        height: $headerH;
+        line-height: $headerH;
+        padding: 0 15px;
+        display: flex;
+        &-logo{
+            height: 100%;
+            margin-right: 15px;
+            &>*{
+                display: block;
+                float: left;
+                height: 100%;
+            }
+            img{
+                margin-right: 4px;
+            }
+            font-size: 18px;
+            font-weight: 700;
+        }
+        &-tools{
+            &>*{
+                margin: 0 8px;
+            }
+            &:nth-child(2){
+                flex: 1;
+            }
+        }
+    }
+    &-container{
+        width: 100vw;
+        height: calc(100vh - #{$headerH});
+        &>*{
+            width: 50%;
+        }
+        .CodeMirror{
+            height: calc(100vh - #{$headerH});
+        }
+    }
+    &-helper{
+        width: 460px;
+        //padding: 12px 8px;
+        line-height: initial;
+        &>p{
+            margin: 8px;
+            &>span{
+                font-weight: 600;
+            }
+        }
+    }
+}
