@@ -37,10 +37,10 @@ export default {
     },
     methods: {
         splitCode () {
-            const script = getSource(this.code, 'script')
+            const script = getSource(this.code, 'script')[0] || 'export default {}'
             const style = getSource(this.code, 'style')
             const template = getSource(this.code, 'template')
-            this.js = script[0].replace(
+            this.js = script.replace(
                 /export default/,
                 'return '
             )
