@@ -12,13 +12,13 @@
     "vue": "^2.6.10",
     "vue-router": "^3.0.3",
     "vuex": "^3.0.1",
-    "zov": "^0.9.1"
+    "zov": "0.10.0"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "^3.10.0",
     "@vue/cli-service": "^3.10.0",
-    "node-sass": "^4.9.0",
-    "sass-loader": "^7.1.0",
+    "node-sass": "^4.11.0",
+    "sass-loader": "^7.0.1",
     "vue-template-compiler": "^2.6.10"
   }
 }
